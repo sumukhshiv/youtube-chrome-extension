@@ -1,9 +1,9 @@
 {
-  "name": "YouTube Chrome Extension (change name)",
+  "name": "YouTube Alert",
   "version": "0.0.1",
   "manifest_version": 2,
-  "description": "Yolo this extension helps you keep on top of your subcriptions",
-  "homepage_url": "https://github.com/wilbur-shi/yt-chrome-extension.git",
+  "description": "Helps alert user when subscriptions upload new videos.",
+  "homepage_url": "https://github.com/sumukhshiv/youtube-chrome-extension",
   "icons": {
     "16": "icons/icon16.png",
     "48": "icons/icon48.png",
@@ -16,7 +16,7 @@
   },
   "options_page": "src/options/index.html",
   "browser_action": {
-    "default_icon": "icons/icon19.png",
+    "default_icon": "icons/icon128.png",
     "default_title": "YouTube Alert",
     "default_popup": "src/browser_action/browser_action.html"
   },
