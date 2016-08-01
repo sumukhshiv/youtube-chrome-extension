@@ -1,0 +1,95 @@
+<!doctype html>
+<link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+<style type="text/css">
+
+	#mainPopup {
+		width: 100%;
+		height: 100%;
+		margin: 0;
+		width: 500px;
+		font-family: Lato, Ubuntu, Arial, sans-serif;
+		background-color: #f5f7f5;
+	}
+	body {
+		margin-top: -15px;
+		margin-right: 0px;
+		margin-bottom: 0px;
+		margin-left: 0px;
+	}
+
+	#title {
+		margin: 0 auto;
+		margin-left: 30%;
+
+	}
+
+	h1 {
+		font-size: 20px;
+		color: #CC1010;
+		text-transform: center;
+		padding-top: 19px;
+	}
+
+	#youtube {
+		display: block;
+		margin: 0 auto;
+		float: left;
+		padding-right: 10px;
+		padding-top: 15px;
+
+
+	}
+
+	#search_bar {
+		width:300px;
+		margin: 7px;
+
+		margin-left: 15%;
+	}
+
+	#results {
+		text-align: center;
+		font-size: 13px;
+	}
+
+	button {
+		color: #CC1010;
+	}
+
+	#crying {
+		padding-bottom: 15px;
+	}
+
+
+</style>
+
+<body>
+	<div id="mainPopup">
+	<!--TITLE SECTION-->
+		<div id="title">
+			<img src="yt_head.png" id = "youtube" style="width:45px;height:32px;" >
+			<h1>YouTube Alert</h1>
+		</div>
+		<hr align="center" width="100%">
+	<!--END TITLE SECTION-->
+
+	<!--SEARCH SECTION-->
+		<div id="top_search">
+			<div class="wrapper">
+				<input type="text" id = "search_bar"/>
+				<button>Add</button>
+			</div>
+		</div>
+		<hr align="center" width="100%">
+	<!--END SEARCH SECTION-->
+
+	<!--RESULTS SECTION-->
+		<div id="results">
+			<p>No new videos uploaded...</p>
+			<img src="crying.png" id = "crying" style="width:25px;height:25px;" >
+		</div>
+	<!--END SEARCH SECTION-->
+
+	</div>
+
+</body>
