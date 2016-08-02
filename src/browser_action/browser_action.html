@@ -5,7 +5,7 @@
 		<link rel="stylesheet" type="text/css" href="style.css">
 	<!-- 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script> -->
 		<script src="/js/jquery-3.1.0.min.js"></script>
-		<script src="popup.js"></script>
+
 	</head>
 	<body>
 		<div id="mainPopup">
@@ -18,13 +18,14 @@
 		<!--END TITLE SECTION-->
 
 		<!--SEARCH SECTION-->
-			<div id="top_search">
-				<div class="wrapper">
-					<input type="text" id = "search_bar" placeholder="Enter a YouTube Channel"/>
-					<button id = "add-channel-btn">Add</button>
-				</div>
+		<div id="top_search">
+			<div class="wrapper">
+				<input type="text" id = "task" placeholder="Enter a YouTube Channel"/>
+				<button id = "add">Add</button>
 			</div>
-			<hr align="center" width="100%">
+		</div>
+		<hr align="center" width="100%">
+		<script src="popup.js"></script>
 		<!--END SEARCH SECTION-->
 
 		<!--RESULTS SECTION-->
@@ -35,8 +36,9 @@
 			<hr align="center" width="100%">
 		<!--END SEARCH SECTION-->
 
-			<div>
-				<ul id="channel-list"></ul>
+			<div id = "user_list">
+				<h3>Your Channels</h3>
+				<div id="todos"></div>
 			</div>
 		</div>
 	</body>

@@ -36,7 +36,7 @@
 
 	}
 
-	#search_bar {
+	#task {
 		width:250px;
 		margin: 7px;
 
@@ -54,4 +54,13 @@
 
 	#crying {
 		padding-bottom: 15px;
+	}
+
+	#user_list {
+		text-align: center;
+	}
+
+	#channel-list {
+		margin-left: -20px;
+
 	}
