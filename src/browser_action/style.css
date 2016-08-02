@@ -1,0 +1,57 @@
+	#mainPopup {
+		width: 100%;
+		height: 100%;
+		margin: 0;
+		width: 400px;
+		font-family: Lato, Ubuntu, Arial, sans-serif;
+		background-color: #f5f7f5;
+	}
+	body {
+		margin-top: -15px;
+		margin-right: 0px;
+		margin-bottom: 0px;
+		margin-left: 0px;
+	}
+
+	#title {
+		margin: 0 auto;
+		margin-left: 25%;
+
+	}
+
+	h1 {
+		font-size: 20px;
+		color: #CC1010;
+		text-transform: center;
+		padding-top: 19px;
+	}
+
+	#youtube {
+		display: block;
+		margin: 0 auto;
+		float: left;
+		padding-right: 10px;
+		padding-top: 15px;
+
+
+	}
+
+	#search_bar {
+		width:250px;
+		margin: 7px;
+
+		margin-left: 15%;
+	}
+
+	#results {
+		text-align: center;
+		font-size: 13px;
+	}
+
+	button {
+		color: #CC1010;
+	}
+
+	#crying {
+		padding-bottom: 15px;
+	}
