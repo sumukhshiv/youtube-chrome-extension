@@ -1,3 +1,4 @@
+
 function get_todos() {
     var todos = new Array;
     var todos_str = localStorage.getItem('todo');
