@@ -3,6 +3,7 @@
 	<head>
 		<link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" type="text/css" href="style.css">
+		<script src="popup.js"></script>
 	</head>
 	<body>
 		<div id="mainPopup">
@@ -18,19 +19,23 @@
 			<div id="top_search">
 				<div class="wrapper">
 					<input type="text" id = "search_bar" placeholder="Enter a YouTube Channel"/>
-					<button>Add</button>
+					<button id="add-channel-btn">Add</button>
 				</div>
 			</div>
 			<hr align="center" width="100%">
 		<!--END SEARCH SECTION-->
 
 		<!--RESULTS SECTION-->
-			<div id="results">
+			<div id="resuls">
 				<p>No new videos uploaded...</p>
-				<img src="crying.png" id = "crying" style="width:25px;height:25px;" >
+				<img src="crying.png" id="crying" style="width:25px;height:25px;" >
 			</div>
+			<hr align="center" width="100%">
 		<!--END SEARCH SECTION-->
 
+			<div>
+				<ul id="channel-list"></ul>
+			</div>
 		</div>
 	</body>
 </html>
