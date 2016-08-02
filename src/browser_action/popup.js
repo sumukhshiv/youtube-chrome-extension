@@ -48,8 +48,12 @@ function show() {
     };
 }
 
-document.getElementById('add').addEventListener('click', add);
-show();
+
+
+$(document).ready(function() {
+    document.getElementById('add').addEventListener('click', add);
+    show();
+});
 
 
 
