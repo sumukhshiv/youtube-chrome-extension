@@ -60,6 +60,15 @@ button {
 }
 
 #channel-list {
-	margin-left: -20px;
+	margin-left: 25px;
+	padding-left: 8px;
 
+}
+
+.remove {
+	margin-left: 12px;
+}
+
+a {
+	display: block;
 }

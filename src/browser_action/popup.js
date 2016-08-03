@@ -31,11 +31,11 @@ function showList() {
   // bkg.console.log("in showList");
   var channels = getChannels();
 
-  var html = '<ul>';
+  var html = '<p>';
   for (var i=0;i<channels.length;i++) {
-    html += '<li>' + channels[i] + '<button class="remove" id="' + i + '">x</button></li>';
+    html += '<a href= "https://www.youtube.com/">' + channels[i] + '<button class="remove" id="' + i + '">x</button></a>';
   }
-  html += '</ul>';
+  html += '</p>';
   $('#channel-list').html(html);
   $('.remove').click(removeChannel);
 }
