@@ -55,3 +55,12 @@
 	#crying {
 		padding-bottom: 15px;
 	}
+
+	#user-list {
+		text-align: center;
+	}
+
+	#channel-list {
+		margin-left: -20px;
+
+	}
