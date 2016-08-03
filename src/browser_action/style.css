@@ -27,6 +27,7 @@ h1 {
 	padding-top: 19px;
 }
 
+
 #youtube {
 	display: block;
 	margin: 0 auto;
@@ -60,18 +61,41 @@ button {
 }
 
 #channel-list {
-	margin-left: 25px;
-	padding-left: 8px;
+	text-align: center;
+
+
 
 }
 
 .remove {
 	margin-left: 12px;
+	color: black;
+	float: right;
+	border: none;
+	background-color: red;
+	margin-top: 3px;
+	width: 12px;
+	height: 12px;
+	vertical-align: middle;
+	border-radius: 50%;
+	text-align: center;
 }
+
+.remove:hover {
+	background-color: #CC1010;
+
+}
+
+
+
 
 a {
 	display: block;
 	color: black;
+	font-size: 13px;
+	text-decoration: none;
+	padding-left: 23px;
+	text-align: center;
 }
 
 a:hover {

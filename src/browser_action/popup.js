@@ -33,7 +33,7 @@ function showList() {
 
   var html = '<p>';
   for (var i=0;i<channels.length;i++) {
-    html += '<a href= "https://www.youtube.com/">' + channels[i] + '<button class="remove" id="' + i + '">x</button></a>';
+    html += '<a href= "https://www.youtube.com/">' + channels[i] + '<button class="remove" id="b-r' + i + '"></button></a>';
   }
   html += '</p>';
   $('#channel-list').html(html);
