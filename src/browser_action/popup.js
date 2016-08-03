@@ -1,4 +1,3 @@
-
 // Background page for debugging purposes (bkg.console.log)
 var bkg = chrome.extension.getBackgroundPage();
 
@@ -14,7 +13,7 @@ function getChannels() {
   return channels;
 }
 
-// Event handler for "x" button that removes channel from localStorage 
+// Event handler for "x" button that removes channel from localStorage
 // when clicked and updates UI
 function removeChannel() {
   // bkg.console.log("in removeChannel");
@@ -49,7 +48,7 @@ function addChannel() {
     var channels = getChannels();
     channels.push(input);
     localStorage.setItem('channels', JSON.stringify(channels));
-    showList();    
+    showList();
     $('#search_bar').val("");
   }
 
