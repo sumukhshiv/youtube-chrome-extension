@@ -1,3 +1,4 @@
+
 // Background page for debugging purposes (bkg.console.log)
 var bkg = chrome.extension.getBackgroundPage();
 
