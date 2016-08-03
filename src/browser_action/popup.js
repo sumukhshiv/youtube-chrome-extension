@@ -22,7 +22,6 @@ function removeChannel() {
   var channels = getChannels();
   channels.splice(id, 1);
   localStorage.setItem('channels', JSON.stringify(channels));
-  bkg.console.log("we in here removing");
   showList();
 
   return false;
@@ -46,10 +45,14 @@ function showList() {
 function addChannel() {
   // bkg.console.log("in addChannel");
   var input = $('#search_bar').val();
-  var channels = getChannels();
-  channels.push(input);
-  localStorage.setItem('channels', JSON.stringify(channels));
-  showList();
+  if (input != "") {
+    var channels = getChannels();
+    channels.push(input);
+    localStorage.setItem('channels', JSON.stringify(channels));
+    showList();    
+    $('#search_bar').val("");
+  }
+
   return false;
 }
 
