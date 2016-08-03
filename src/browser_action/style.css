@@ -71,4 +71,9 @@ button {
 
 a {
 	display: block;
+	color: black;
+}
+
+a:hover {
+    color: #CC1010;
 }

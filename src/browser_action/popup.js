@@ -63,6 +63,15 @@ function start() {
 
 $(document).ready(start);
 
+//Not sure if it's okay to have two document.ready's (WILL CHECK TOMORROW)
+//Experimenting only: opens new tabs for channel links (hardcoded)
+$(document).ready(function(){
+   $('body').on('click', 'a', function(){
+     chrome.tabs.create({url: $(this).attr('href')});
+     return false;
+   });
+});
+
 // A cool GT Analyze function used for initial testing.
 // function analyzeGTSwag() {
 //   var checkPageButton = document.getElementById('add-channel-btn');
