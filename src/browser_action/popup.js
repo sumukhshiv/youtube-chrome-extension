@@ -11,10 +11,15 @@ function getChannels() {
     return channelsGlobal
   }
   var channels_str = localStorage.getItem('channels');
-  if (channels_str != null && channels_str != undefined) {
+  if (channels_str !== null && channels_str !== undefined) {
     channelsGlobal = JSON.parse(channels_str);
-  }
+  } 
   return channelsGlobal;
+}
+
+function Channel(title, imgURL) {
+  this.title = title;
+  this.imgURL = imgURL;
 }
 
 // Event handler for "x" button that removes channel from localStorage
@@ -34,11 +39,19 @@ function removeChannel() {
 function showList() {
   // bkg.console.log("in showList");
   var channels = getChannels();
-
+  if (channels === null || channels === undefined || channels.length === 0) {
+    $('#no-channels-text').show();
+    return;
+  } else {
+    $('#no-channels-text').hide();
+  }
   var html = '<p>';
   for (var i=0;i<channels.length;i++) {
-    var title = channels[i];
-    html += '<a href= "https://www.youtube.com/' + title + '">' + channels[i] + '<button class="remove" id="b-r' + i + '"></button></a>';
+    var currentChannel = channels[i]; // channel name for linking to channel
+    var title = currentChannel.title;
+    var imgURL = currentChannel.imgURL;
+    imgsrc = '<img src=' + imgURL + '>';
+    html += imgsrc + '<a href= "https://www.youtube.com/' + title + '">' + title + '<button class="remove" id="b-r' + i + '"></button></a>';
   }
   html += '</p>';
   $('#channel-list').html(html);
@@ -70,12 +83,13 @@ function searchForChannel(channelQuery) {
       var snippet = data.items[0].snippet;
       var title = snippet.title;
       var thumbnailURL = snippet.thumbnails.default.url;
-      bkg.console.log(title + " and also URL" + thumbnailURL);
+      var newChannel = new Channel(title, thumbnailURL);
+      // bkg.console.log(title + " and also URL" + thumbnailURL);
       
       // get channels from localStorage, or if already in javascript.
       // add the title (username) to the channels list
       var channels = getChannels();
-      channels.push(title);
+      channels.push(newChannel);
       localStorage.setItem('channels', JSON.stringify(channels));
       showList();
       $('#search_bar').val("");
