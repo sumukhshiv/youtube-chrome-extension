@@ -51,7 +51,7 @@ function getNewVideos() {
               var videoTitle = snippet.title;
               var thumbnailURL = snippet.thumbnails.high.url;
               var channelTitle = snippet.channelTitle;
-              var publishedAt = snippet.publishedAt;
+              var publishedAt = (snippet.publishedAt).substring(0, 10);
               var newVideo = new Video(videoTitle, channelTitle, thumbnailURL, publishedAt);
               // bkg.console.log("we DO push");
               // newVideos.push(newVideo);
@@ -116,7 +116,7 @@ function showList() {
     var title = currentChannel.title;
     var imgURL = currentChannel.imgURL;
     // var channelId = currentChannel.channelId;
-    imgsrc = '<img src=' + imgURL + '>';
+    imgsrc = '<img style="width:30px; height:30px;" src=' + imgURL + '>';
     html += imgsrc + '<a href= "https://www.youtube.com/' + title + '">' + title + '<button class="remove" id="remove-btn-' + i + '"></button></a>';
   }
   html += '</p>';

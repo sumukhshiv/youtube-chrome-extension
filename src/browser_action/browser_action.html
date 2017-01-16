@@ -54,9 +54,9 @@
 		            		<img ng-src="{{result.imgURL}}"> 
 	            		</div>
 		            	<div class="info-container">
-			            	<h3 id="video-title">{{result.videoTitle}}</h3>
-			            	<p id="channel-title">{{result.channelTitle}}</p>
-			            	<p id="publishedat">{{result.publishedAt}}</p>		            		
+			            	<h3 class="info-text" id="video-title">{{result.videoTitle}}</h3>
+			            	<a class="info-text" id="channel-title" ng-href="https://www.youtube.com/user/{{result.channelTitle}}">{{result.channelTitle}}</a>
+			            	<p class="info-text" id="publishedat">{{result.publishedAt}}</p>		            		
 		            	</div>
 	            	 </div>
 	            <li>
@@ -70,7 +70,6 @@
 		<!--CHANNEL SECTION-->
 			<div id="user-list">
 				<h3>Your Channels</h3>
-
 					<p id="no-channels-text">No channels on your list! Add channels above.</p>
 				<div id="channel-list">
 				</div>
