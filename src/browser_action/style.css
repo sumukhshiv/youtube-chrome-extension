@@ -57,6 +57,19 @@ h1 {
 	list-style: none;
 }
 
+.video-results img {
+	height: 100px;
+	width: 100px;
+}
+
+.video-results .result-thumbnail {
+}
+
+.video-results .info-container {
+	width: auto;
+	overflow: auto;
+}
+
 button {
 	color: #CC1010;
 }

@@ -49,7 +49,16 @@
 		        </div>
 	          <ul>
 	            <li ng-repeat="(channelId, result) in results">
-	            	{{result.videoTitle}} and {{result.channelTitle}} and {{result.publishedAt}}
+	            	<div class="video-results">
+	            		<div class="result-thumbnail">
+		            		<img ng-src="{{result.imgURL}}"> 
+	            		</div>
+		            	<div class="info-container">
+			            	<h3 id="video-title">{{result.videoTitle}}</h3>
+			            	<p id="channel-title">{{result.channelTitle}}</p>
+			            	<p id="publishedat">{{result.publishedAt}}</p>		            		
+		            	</div>
+	            	 </div>
 	            <li>
 	          </ul>
 	        </div>

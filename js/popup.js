@@ -49,9 +49,10 @@ function getNewVideos() {
               // AND RETURN NULL OR WHATEVER IS APPROPRIATE
               var snippet = data.items[0].snippet;
               var videoTitle = snippet.title;
-              var thumbnailURL = snippet.thumbnails.default.url;
+              var thumbnailURL = snippet.thumbnails.high.url;
               var channelTitle = snippet.channelTitle;
-              var newVideo = new Video(videoTitle, channelTitle, thumbnailURL, "1.15");
+              var publishedAt = snippet.publishedAt;
+              var newVideo = new Video(videoTitle, channelTitle, thumbnailURL, publishedAt);
               // bkg.console.log("we DO push");
               // newVideos.push(newVideo);
               $scope.results[channelId] = newVideo;
@@ -80,12 +81,17 @@ function getNewVideos() {
 function removeChannel() {
   // bkg.console.log("in removeChannel");
   var id = $(this).prop('id');
+  var index = parseInt(id.substring(11), 10);
+  bkg.console.log("index is " + index);
   var channels = getChannels();
-  // var channelId = channels[id].channelId;
-  // var $scope = angular.element($("#results")).scope();
-  // delete $scope.results[channelId];
-  // $scope.numNewVideos -= 1;
-  // $scope.$apply();
+  bkg.console.log("length is " + channels.length);
+  var channelId = channels[index].channelId;
+  bkg.console.log("channelId is " + channelId);
+  var $scope = angular.element($("#results")).scope();
+  delete $scope.results[channelId];
+  bkg.console.log("$scope.results[channelId] is " + $scope.results[channelId]);
+  $scope.numNewVideos -= 1;
+  $scope.$apply();
   channels.splice(id, 1);
   localStorage.setItem('channels', JSON.stringify(channels));
   showList();
@@ -111,7 +117,7 @@ function showList() {
     var imgURL = currentChannel.imgURL;
     // var channelId = currentChannel.channelId;
     imgsrc = '<img src=' + imgURL + '>';
-    html += imgsrc + '<a href= "https://www.youtube.com/' + title + '">' + title + '<button class="remove" id="b-r' + i + '"></button></a>';
+    html += imgsrc + '<a href= "https://www.youtube.com/' + title + '">' + title + '<button class="remove" id="remove-btn-' + i + '"></button></a>';
   }
   html += '</p>';
   $('#channel-list').html(html);
