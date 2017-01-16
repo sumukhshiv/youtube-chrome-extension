@@ -43,9 +43,18 @@ h1 {
 	margin-left: 15%;
 }
 
-#results {
+/*#results #no-new-vids-text {
 	text-align: center;
 	font-size: 13px;
+}*/
+
+#results .container {
+	max-height: 400px;
+	overflow: auto;
+}
+
+#results li {
+	list-style: none;
 }
 
 button {
@@ -53,6 +62,9 @@ button {
 }
 
 #crying {
+	margin: auto;
+	width:25px;
+	height:25px;
 	padding-bottom: 15px;
 }
 

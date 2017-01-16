@@ -19,7 +19,7 @@
     "default_icon": "icons/icon128.png",
     "default_title": "YouTube Alert",
     "default_popup": "src/browser_action/browser_action.html"
-  },
+  }, 
   "permissions": [
     "activeTab"
   ]
