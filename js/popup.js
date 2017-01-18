@@ -13,11 +13,12 @@ function Channel(title, imgURL, channelId) {
 
 // Define Video object for our convenience (will need more parameters like channelTitle, video
 // duration, etc.)
-function Video(videoTitle, channelTitle, imgURL, publishedAt) {
+function Video(videoTitle, channelTitle, imgURL, publishedAt, videoId) {
   this.videoTitle = videoTitle;
   this.channelTitle = channelTitle;
   this.imgURL = imgURL;
   this.publishedAt = publishedAt;
+  this.videoId = videoId;
 }
 
 // Returns all channels from local storage
@@ -52,7 +53,8 @@ function getNewVideos() {
               var thumbnailURL = snippet.thumbnails.high.url;
               var channelTitle = snippet.channelTitle;
               var publishedAt = (snippet.publishedAt).substring(0, 10);
-              var newVideo = new Video(videoTitle, channelTitle, thumbnailURL, publishedAt);
+              var videoId = data.items[0].id.videoId;
+              var newVideo = new Video(videoTitle, channelTitle, thumbnailURL, publishedAt, videoId);
               // bkg.console.log("we DO push");
               // newVideos.push(newVideo);
               $scope.results[channelId] = newVideo;
@@ -85,14 +87,15 @@ function removeChannel() {
   bkg.console.log("index is " + index);
   var channels = getChannels();
   bkg.console.log("length is " + channels.length);
+  var channelTitle = channels[index].title;
+  bkg.console.log("channel title is  " + channelTitle);
   var channelId = channels[index].channelId;
-  bkg.console.log("channelId is " + channelId);
+  // bkg.console.log("channelId is " + channelId);
   var $scope = angular.element($("#results")).scope();
   delete $scope.results[channelId];
-  bkg.console.log("$scope.results[channelId] is " + $scope.results[channelId]);
   $scope.numNewVideos -= 1;
   $scope.$apply();
-  channels.splice(id, 1);
+  channels.splice(index, 1);
   localStorage.setItem('channels', JSON.stringify(channels));
   showList();
 
@@ -110,19 +113,21 @@ function showList() {
   } else {
     $('#no-channels-text').hide();
   }
-  var html = '<p>';
+  var html = '<ul style="list-style:none">';
   for (var i=0;i<channels.length;i++) {
     var currentChannel = channels[i]; // channel name for linking to channel
     var title = currentChannel.title;
     var imgURL = currentChannel.imgURL;
     // var channelId = currentChannel.channelId;
-    imgsrc = '<img style="width:30px; height:30px;" src=' + imgURL + '>';
-    html += imgsrc + '<a href= "https://www.youtube.com/' + title + '">' + title + '<button class="remove" id="remove-btn-' + i + '"></button></a>';
+    var imgsrc = '<li> <div class="channel"> <img style="width:30px; height:30px;" src=' + imgURL + '>';
+    html += imgsrc + '<a href= "https://www.youtube.com/' + title + '">' + title + '</a><button class="remove" id="remove-btn-' + i + '"></button> </div></li>';
   }
-  html += '</p>';
+  html += '</ul>';
   $('#channel-list').html(html);
   $('.remove').click(removeChannel);
 }
+
+// <li> <div class="channel"> </div> </li>
 
 // Adds channel to localStorage based on current input in search_bar
 function addChannel() {
@@ -201,6 +206,12 @@ myApp.controller('NewVideosController', ['$scope', function($scope) {
   $scope.refreshResults = function() {
     // bkg.console.log('we call refreshresults');
     getNewVideos();
+  }
+
+  $scope.openVideoLink = function(videoId) {
+    bkg.console.log('we in ovl tho');
+    var url = 'https://www.youtube.com/watch?v=' + videoId;
+    window.open(url, '_blank');
   }
 
   $scope.refreshResults();

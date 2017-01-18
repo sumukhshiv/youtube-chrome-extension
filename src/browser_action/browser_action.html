@@ -50,13 +50,14 @@
 	          <ul>
 	            <li ng-repeat="(channelId, result) in results">
 	            	<div class="video-results">
-	            		<div class="result-thumbnail">
+	            		<div ng-click="openVideoLink(result.videoId)" class="result-thumbnail">
 		            		<img ng-src="{{result.imgURL}}"> 
 	            		</div>
 		            	<div class="info-container">
-			            	<h3 class="info-text" id="video-title">{{result.videoTitle}}</h3>
-			            	<a class="info-text" id="channel-title" ng-href="https://www.youtube.com/user/{{result.channelTitle}}">{{result.channelTitle}}</a>
-			            	<p class="info-text" id="publishedat">{{result.publishedAt}}</p>		            		
+			            	<h3 ng-click="openVideoLink(result.videoId)" id="video-title">{{result.videoTitle}}</h3>
+			            	<a id="channel-title" ng-href="https://www.youtube.com/user/{{result.channelTitle}}">{{result.channelTitle}} | {{result.publishedAt}} </a>
+			            	<!--  | {{result.publishedAt}} put this in the link instead of having a p on the bottom -->
+			            	<!-- <p id="publishedat">{{result.publishedAt}}</p>		            		 -->
 		            	</div>
 	            	 </div>
 	            <li>

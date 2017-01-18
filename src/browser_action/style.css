@@ -60,7 +60,7 @@ h1 {
 .video-results {
 	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
-    height: 100%;
+    /*height: 100%;*/
     background-color: white;
     margin-left: -50px;
 /*    margin-bottom: -21px;
@@ -70,34 +70,57 @@ h1 {
 }
 
 .video-results img {
-	height: 90px;
-	width: 140px;
+	height: 77px;
+	width: 120px;
 	padding-top: 5px;
 	padding-bottom: 5px;
 }
 
 .video-results .result-thumbnail {
 	float: left;
-	width: 140px;
-	height: 100px;
+    transition-duration: .5s;
+	width: 120px;
+	height: 87px;
+}
+
+.video-results .result-thumbnail:hover {
+	cursor: pointer;
+	opacity: .5;
 }
 
 .video-results .info-container {
 	width: auto;
 	/*padding-left: 130px;*/
-	height: 100px;
+	height: 87px;
+	padding-left: 125px;
 }
 
 /* Could combine this by having a class for the text tags, then 
 styling that class with the same thing. But this works too */
-.video-results .info-text {
+.video-results h3 {
 	overflow: hidden;
-	white-space: nowrap;
-	text-overflow: ellipsis;
+	/*white-space: nowrap;*/
+	/*text-overflow: ellipsis;*/
+	/*border: 2px solid black;*/
+	word-wrap: break-word;
 	padding-top: 2px;
-	padding-left: 5px;
-	height: 20px;
-	line-height: 20px;
+	height: 40px;
+}
+
+.video-results h3:hover {
+	color: red;
+	cursor: pointer;
+}
+
+.video-results a {
+	/*border: 2px solid black;*/
+	text-decoration: none;
+	color: black;
+	height: 47px;
+}
+
+.video-results a:hover {
+	color: red;
 }
 
 button {
@@ -117,28 +140,36 @@ button {
 
 #channel-list a {
 	font-size: 15px;
-	/*text-align: center;*/
+	text-align: center;
 	padding-bottom: 15px;
+	padding-left: 15px;
 }
 
 #channel-list img {
-	height: 30px;
-	width: 30px;
-	float: left;
+	height: 50px;
+	width: 50px;
+	vertical-align: middle;
+	/*margin-right: 15px;*/
+}
+
+.channel {
+	border: 2px solid black;
+	margin-left: -40px;
 }
 
 .remove {
-	margin-left: 12px;
+	/*margin-left: 12px;*/
 	color: black;
-	float: right;
+	/*float: right;*/
 	border: none;
 	background-color: red;
-	margin-top: 3px;
 	width: 12px;
 	height: 12px;
 	vertical-align: middle;
 	border-radius: 50%;
-	text-align: center;
+	margin-left: 30px;
+	/*text-align: center;*/
+	/*margin-right: 100px;*/
 }
 
 .remove:hover {
@@ -147,11 +178,12 @@ button {
 }
 
 #channel-list a {
-	display: block;
+	/*display: block;*/
 	color: black;
 	font-size: 13px;
 	text-decoration: none;
-	padding-left: 23px;
+	vertical-align: middle;
+	/*padding-left: 23px;*/
 	text-align: center;
 }
 
